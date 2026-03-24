@@ -1,0 +1,148 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 1 - CS Fundamentals</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🚀 Day 1 - CS Fundamentals (OS)</h1>
+  <p class="quote">"I don't study systems. I understand them."</p>
+
+  <div class="card">
+    <h2>📚 Topics Covered</h2>
+    <span class="tag">Process vs Thread</span>
+    <span class="tag">Process States</span>
+    <span class="tag">PCB</span>
+    <span class="tag">Scheduling</span>
+    <span class="tag">Context Switching</span>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Key Learnings</h2>
+    <ul>
+      <li><b>Process vs Thread:</b> Threads are lightweight but risky due to shared memory.</li>
+      <li><b>Process States:</b> Most delays happen in WAITING (I/O).</li>
+      <li><b>PCB:</b> OS stores all process info here.</li>
+      <li><b>Scheduling:</b> Trade-off between fairness and performance.</li>
+      <li><b>Context Switching:</b> Too many switches = performance drop.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⚔️ DevOps Insight</h2>
+    <ul>
+      <li>High CPU ≠ High performance</li>
+      <li>Most real issues = I/O bottlenecks</li>
+      <li>Too many threads can crash systems</li>
+      <li>OS is always balancing efficiency vs responsiveness</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🧨 My Answers</h2>
+    <button onclick="toggle()">Reveal</button>
+    <div id="answers" class="hidden">
+      <p><b>Why too many threads slow system?</b><br>
+      Context switching overhead + cache inefficiency + synchronization cost.</p>
+
+      <p><b>Why SJF impractical?</b><br>
+      Cannot predict CPU burst time + starvation.</p>
+
+      <p><b>What OS optimizes?</b><br>
+      Throughput + CPU utilization + response time.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Reflection</h2>
+    <p id="reflection">Click below to generate today's reflection...</p>
+    <button onclick="generateReflection()">Generate Reflection</button>
+  </div>
+
+</div>
+
+<script>
+  function toggle() {
+    const ans = document.getElementById("answers");
+    ans.classList.toggle("hidden");
+  }
+
+  function generateReflection() {
+    const reflections = [
+      "Today I understood that performance is not just CPU, but waiting time.",
+      "I realized threads are powerful but dangerous.",
+      "Systems are about trade-offs, not perfection.",
+      "Debugging mindset is more important than memorizing concepts."
+    ];
+
+    const random = reflections[Math.floor(Math.random() * reflections.length)];
+    document.getElementById("reflection").innerText = random;
+  }
+</script>
+
+</body>
+</html>
+```
